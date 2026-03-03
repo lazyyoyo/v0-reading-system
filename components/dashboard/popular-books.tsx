@@ -28,8 +28,7 @@ export function PopularBooks() {
                 src={book.cover}
                 alt={book.title}
                 fill
-                priority={index === 0}
-                loading={index === 0 ? "eager" : "lazy"}
+                priority
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="(max-width: 640px) 50vw, 25vw"
               />
