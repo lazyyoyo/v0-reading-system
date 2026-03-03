@@ -21,13 +21,15 @@ export function PopularBooks() {
         </button>
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-        {books.map((book) => (
+        {books.map((book, index) => (
           <Link key={book.id} href={`/book/${book.id}`} className="group">
             <div className="relative aspect-[2/3] overflow-hidden rounded-lg bg-secondary">
               <Image
                 src={book.cover}
                 alt={book.title}
                 fill
+                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="(max-width: 640px) 50vw, 25vw"
               />
